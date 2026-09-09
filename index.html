@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giovanna Magalhães | Psicóloga Clínica Online</title>
     <meta name="description" content="Recupere seu bem-estar emocional com um acompanhamento clínico seguro, no seu tempo e no seu espaço. Atendimento psicológico online em Diadema - SP.">
+
+    <!-- Open Graph (preview ao compartilhar o link, ex: WhatsApp) -->
+    <!-- IMPORTANTE: após publicar o site, trocar og:url e og:image por URLs absolutas (https://seudominio.com/...) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Giovanna Magalhães | Psicóloga Clínica Online">
+    <meta property="og:description" content="Recupere seu bem-estar emocional com um acompanhamento clínico seguro, no seu tempo e no seu espaço. Atendimento psicológico online em Diadema - SP.">
+    <meta property="og:image" content="perfil.jpg">
+
+    <!-- Favicon (SVG inline com a inicial "G", sem depender de arquivo externo) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23789BBD'/%3E%3Ctext x='32' y='42' font-family='Open Sans, sans-serif' font-size='32' font-weight='700' fill='%23F6F8FA' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
     
     <!-- Google Fonts: Open Sans para Títulos, Inter para Textos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -320,29 +331,39 @@
         }
 
         .diferenciais-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            max-width: 760px;
+            margin: 0 auto;
             text-align: left;
         }
 
         .diff-item {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-            background: #fff;
-            padding: 30px;
-            border-radius: var(--radius);
-            box-shadow: 0 10px 30px rgba(35, 49, 66, 0.03);
+            align-items: flex-start;
+            gap: 24px;
+            padding: 28px 4px;
+            border-bottom: 1px solid rgba(35, 49, 66, 0.1);
+        }
+
+        .diff-item:last-child {
+            border-bottom: none;
         }
 
         .diff-item i {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 4px;
         }
 
         .diff-item h3 {
             font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+
+        .diff-item p {
+            margin-bottom: 0;
         }
 
         /* ================= FAQ ================= */
@@ -475,10 +496,29 @@
             transform: translateY(0);
         }
 
+        /* ================= Acessibilidade: Movimento Reduzido ================= */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .fade-up {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
         /* ================= Responsividade ================= */
         @media (max-width: 900px) {
             .menu-toggle {
                 display: block;
+            }
+
+            .header-actions {
+                display: none;
             }
 
             .desktop-menu {
@@ -527,8 +567,13 @@
                 padding: 60px 20px;
             }
 
-            h2 {
-                font-size: 2rem !important;
+            .sobre h2,
+            .servicos h2,
+            .etapas h2,
+            .diferenciais h2,
+            .faq h2,
+            footer h2 {
+                font-size: 2rem;
             }
 
             .wpp-float {
@@ -557,7 +602,7 @@
             </nav>
 
             <div class="header-actions">
-                <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="btn" style="padding: 10px 20px; font-size: 0.9rem;">Agendar Consulta</a>
+                <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="btn whatsapp-cta" style="padding: 10px 20px; font-size: 0.9rem;">Agendar minha consulta</a>
             </div>
 
             <button class="menu-toggle" aria-label="Abrir Menu"><i class="ph ph-list"></i></button>
@@ -570,7 +615,7 @@
                 <span class="tag">Atendimento 100% Online</span>
                 <h1>Recupere seu bem-estar emocional com um acompanhamento clínico seguro.</h1>
                 <p>Atendimento psicológico online especializado, baseado em evidências, para ajudar você a lidar com os desafios diários com mais leveza, no seu espaço e no seu tempo.</p>
-                <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="btn"><i class="ph ph-whatsapp-logo"></i> Agendar minha consulta</a>
+                <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="btn whatsapp-cta"><i class="ph ph-whatsapp-logo"></i> Agendar minha consulta</a>
             </div>
             
             <img src="perfil.jpg" alt="Giovanna Magalhães - Psicóloga" class="hero-image fade-up">
@@ -584,8 +629,8 @@
             <div class="sobre-content fade-up">
                 <span class="tag">Quem estará com você</span>
                 <h2>Um espaço seguro e livre de julgamentos</h2>
-                <p>Olá, sou Giovanna Magalhães. Sou psicóloga clínica com atuação embasada na Terapia Cognitivo-Comportamental (TCC) e pós-graduação voltada para a saúde mental. Acredito que a terapia é um ambiente essencial para explorar suas emoções e desenvolver ferramentas práticas para o dia a dia.</p>
-                <p>Minha base de atendimento é em Diadema (SP), mas através da modalidade online levo um cuidado humanizado e técnico para pacientes onde quer que estejam, respeitando sempre sua individualidade e ritmo.</p>
+                <p>Olá, sou Giovanna Magalhães. Sou psicóloga clínica, pós-graduanda em Terapia Cognitivo-Comportamental (TCC), com atuação voltada para a saúde mental. Acredito que a terapia é um ambiente essencial para explorar suas emoções e desenvolver ferramentas práticas para o dia a dia.</p>
+                <p>Minha base de atendimento é em Diadema (SP), mas através da modalidade online levo um cuidado humanizado e técnico para pacientes onde quer que estejam. Respeito sempre a individualidade e o ritmo de cada pessoa.</p>
                 <span class="crp">CRP: 06/227876</span>
             </div>
         </div>
@@ -622,7 +667,7 @@
             </div>
             
             <div style="text-align: center;" class="fade-up">
-                <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="btn">Conversar no WhatsApp</a>
+                <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="btn whatsapp-cta">Agendar minha consulta</a>
             </div>
         </div>
     </section>
@@ -648,7 +693,7 @@
                 <div class="etapa-item fade-up">
                     <span class="etapa-numero">3</span>
                     <h3>Sua Sessão</h3>
-                    <p>No horário marcado, você acessa o link seguro em um ambiente tranquilo para iniciarmos.</p>
+                    <p>No horário marcado, você acessa o link seguro do <!-- TODO: confirmar plataforma real usada (Google Meet, Zoom, etc.) -->[PLATAFORMA DE VIDEOCHAMADA] em um ambiente tranquilo para iniciarmos.</p>
                 </div>
             </div>
         </div>
@@ -662,26 +707,34 @@
             <div class="diferenciais-grid">
                 <div class="diff-item fade-up">
                     <i class="ph ph-lock-key"></i>
-                    <h3>Sigilo Absoluto</h3>
-                    <p>Plataformas criptografadas e total privacidade garantida em todas as sessões.</p>
+                    <div>
+                        <h3>Sigilo Absoluto</h3>
+                        <p>Plataformas criptografadas e total privacidade garantida em todas as sessões.</p>
+                    </div>
                 </div>
                 
                 <div class="diff-item fade-up">
                     <i class="ph ph-armchair"></i>
-                    <h3>Conforto e Flexibilidade</h3>
-                    <p>Realize sua terapia sem o estresse de trânsito ou deslocamentos físicos.</p>
+                    <div>
+                        <h3>Conforto e Flexibilidade</h3>
+                        <p>Realize sua terapia sem o estresse de trânsito ou deslocamentos físicos.</p>
+                    </div>
                 </div>
                 
                 <div class="diff-item fade-up">
-                    <i class="ph ph-hands-clapping"></i>
-                    <h3>Acolhimento Genuíno</h3>
-                    <p>Escuta empática e focada na construção de um vínculo seguro desde o início.</p>
+                    <i class="ph ph-hand-heart"></i>
+                    <div>
+                        <h3>Acolhimento Genuíno</h3>
+                        <p>Escuta empática e focada na construção de um vínculo seguro desde o início.</p>
+                    </div>
                 </div>
 
                 <div class="diff-item fade-up">
                     <i class="ph ph-books"></i>
-                    <h3>Base Científica</h3>
-                    <p>Abordagens psicológicas consolidadas e respaldadas por evidências clínicas.</p>
+                    <div>
+                        <h3>Base Científica</h3>
+                        <p>Abordagens psicológicas consolidadas e respaldadas por evidências clínicas.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -693,29 +746,29 @@
             
             <div class="accordion fade-up">
                 <div class="accordion-item">
-                    <button class="accordion-btn">O atendimento online funciona tão bem quanto o presencial? <i class="ph ph-caret-down"></i></button>
-                    <div class="accordion-content">
+                    <button class="accordion-btn" aria-expanded="false" aria-controls="faq-1">O atendimento online funciona tão bem quanto o presencial? <i class="ph ph-caret-down"></i></button>
+                    <div class="accordion-content" id="faq-1">
                         <p>Sim. Estudos científicos e a prática clínica comprovam que a eficácia da terapia online é equivalente à presencial. O fator determinante é o vínculo terapêutico estabelecido.</p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
-                    <button class="accordion-btn">Qual a duração de cada sessão? <i class="ph ph-caret-down"></i></button>
-                    <div class="accordion-content">
+                    <button class="accordion-btn" aria-expanded="false" aria-controls="faq-2">Qual a duração de cada sessão? <i class="ph ph-caret-down"></i></button>
+                    <div class="accordion-content" id="faq-2">
                         <p>As sessões têm duração média de 50 minutos e ocorrem preferencialmente de forma semanal.</p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
-                    <button class="accordion-btn">Como é feito o pagamento? <i class="ph ph-caret-down"></i></button>
-                    <div class="accordion-content">
+                    <button class="accordion-btn" aria-expanded="false" aria-controls="faq-3">Como é feito o pagamento? <i class="ph ph-caret-down"></i></button>
+                    <div class="accordion-content" id="faq-3">
                         <p>Os pagamentos são realizados via Pix ou transferência bancária de forma antecipada por sessão ou pacote mensal.</p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
-                    <button class="accordion-btn">Atende por plano de saúde? <i class="ph ph-caret-down"></i></button>
-                    <div class="accordion-content">
+                    <button class="accordion-btn" aria-expanded="false" aria-controls="faq-4">Atende por plano de saúde? <i class="ph ph-caret-down"></i></button>
+                    <div class="accordion-content" id="faq-4">
                         <p>Os atendimentos são particulares, mas forneço recibo detalhado para solicitação de reembolso junto ao seu convênio.</p>
                     </div>
                 </div>
@@ -727,7 +780,7 @@
         <div class="container fade-up">
             <h2>Sua saúde mental merece ser prioridade.</h2>
             <p>Se você sente que é o momento de cuidar de si, clique no botão abaixo e vamos conversar.</p>
-            <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="btn"><i class="ph ph-whatsapp-logo"></i> Falar com Giovanna pelo WhatsApp</a>
+            <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="btn whatsapp-cta"><i class="ph ph-whatsapp-logo"></i> Agendar minha consulta</a>
             
             <div class="footer-info">
                 <p>Giovanna Magalhães — Psicóloga Clínica (CRP: 06/227876)</p>
@@ -739,11 +792,21 @@
     </footer>
 
     <!-- Botão Flutuante -->
-    <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="wpp-float" aria-label="Contato via WhatsApp">
+    <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="wpp-float whatsapp-cta" aria-label="Agendar minha consulta pelo WhatsApp">
         <i class="ph ph-whatsapp-logo"></i>
     </a>
 
     <script>
+        // ===== Fonte única do número/mensagem de WhatsApp =====
+        // Para trocar o número ou a mensagem padrão, edite só aqui.
+        const WHATSAPP_NUMBER = '5511916123261';
+        const WHATSAPP_MESSAGE = 'Olá Giovanna, gostaria de saber mais sobre o atendimento online.';
+        const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+
+        document.querySelectorAll('.whatsapp-cta').forEach(link => {
+            link.href = WHATSAPP_URL;
+        });
+
         // Menu Mobile Toggle com mudança de ícone
         const menuToggle = document.querySelector('.menu-toggle');
         const desktopMenu = document.querySelector('.desktop-menu');
@@ -781,12 +844,15 @@
                 if (content.style.maxHeight) {
                     content.style.maxHeight = null;
                     icon.style.transform = 'rotate(0deg)';
+                    this.setAttribute('aria-expanded', 'false');
                 } else {
                     document.querySelectorAll('.accordion-content').forEach(item => item.style.maxHeight = null);
                     document.querySelectorAll('.accordion-btn i').forEach(i => i.style.transform = 'rotate(0deg)');
+                    document.querySelectorAll('.accordion-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
                     
                     content.style.maxHeight = content.scrollHeight + "px";
                     icon.style.transform = 'rotate(180deg)';
+                    this.setAttribute('aria-expanded', 'true');
                 }
                 
                 icon.style.transition = 'transform 0.3s ease';
