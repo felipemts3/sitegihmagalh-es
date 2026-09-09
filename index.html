@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovanna Magalhães | Psicóloga Clínica Online</title>
+    <meta name="description" content="Recupere seu bem-estar emocional com um acompanhamento clínico seguro, no seu tempo e no seu espaço. Atendimento psicológico online em Diadema - SP.">
+    
+    <!-- Google Fonts: Open Sans para Títulos, Inter para Textos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* ================= Variaveis de Design ================= */
+        :root {
+            --primary: #789BBD; 
+            --primary-dark: #587996; 
+            --bg-color: #F6F8FA; 
+            --bg-alt: #EBF0F5; 
+            --text-dark: #233142; 
+            --text-light: #5B6D7D; 
+            --accent: #D9A087; 
+            
+            --font-title: 'Open Sans', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            
+            --radius: 12px;
+            --transition: 0.3s ease;
+        }
+
+        /* ================= Reset Básico ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-title);
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        section {
+            padding: 100px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ================= Botões ================= */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-family: var(--font-body);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ================= Header e Navegação ================= */
+        header {
+            padding: 15px 20px;
+            background-color: rgba(246, 248, 250, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: var(--font-title);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .desktop-menu {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .desktop-menu a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .desktop-menu a:hover {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* ================= Hero Section ================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px; 
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 3.1rem;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 90%;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 550px;
+            background-color: #DFE5EC; 
+            border-radius: var(--radius);
+            object-fit: cover;
+            box-shadow: 0 15px 35px rgba(35, 49, 66, 0.08);
+        }
+
+        /* ================= Sobre Section ================= */
+        .sobre {
+            background-color: var(--bg-alt);
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .sobre-img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background-color: #DFE5EC;
+            border-radius: var(--radius);
+            object-fit: cover;
+            box-shadow: 0 15px 35px rgba(35, 49, 66, 0.08);
+        }
+
+        .sobre h2 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+        }
+
+        .crp {
+            font-size: 0.95rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 20px;
+            display: block;
+        }
+
+        /* ================= Serviços Section ================= */
+        .servicos h2 {
+            text-align: center;
+            font-size: 2.3rem;
+            margin-bottom: 60px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(35, 49, 66, 0.05);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 2.2rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        /* ================= Etapas (Como Funciona) ================= */
+        .etapas {
+            background-color: var(--bg-alt);
+            text-align: center;
+        }
+
+        .etapas h2 {
+            font-size: 2.3rem;
+            margin-bottom: 60px;
+        }
+
+        .etapas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: left;
+        }
+
+        .etapa-item {
+            position: relative;
+            padding-left: 60px;
+            background: #fff;
+            padding: 40px 30px 40px 60px;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(35, 49, 66, 0.03);
+        }
+
+        .etapa-numero {
+            position: absolute;
+            left: 20px;
+            top: 25px;
+            font-family: var(--font-title);
+            font-size: 2.5rem;
+            color: var(--primary);
+            opacity: 0.3;
+            font-weight: 700;
+        }
+
+        /* ================= Diferenciais ================= */
+        .diferenciais {
+            text-align: center;
+        }
+
+        .diferenciais h2 {
+            font-size: 2.3rem;
+            margin-bottom: 60px;
+        }
+
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+
+        .diff-item {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(35, 49, 66, 0.03);
+        }
+
+        .diff-item i {
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .diff-item h3 {
+            font-size: 1.2rem;
+        }
+
+        /* ================= FAQ ================= */
+        .faq {
+            background-color: var(--bg-alt);
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 2.3rem;
+            margin-bottom: 60px;
+        }
+
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid rgba(35, 49, 66, 0.1);
+            background: #fff;
+            margin-bottom: 12px;
+            border-radius: var(--radius);
+            padding: 0 24px;
+            box-shadow: 0 4px 15px rgba(35, 49, 66, 0.02);
+        }
+
+        .accordion-btn {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 20px 0;
+            font-size: 1.05rem;
+            font-weight: 600;
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-content p {
+            padding-bottom: 20px;
+        }
+
+        /* ================= Footer ================= */
+        footer {
+            background-color: var(--text-dark);
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        footer h2 {
+            color: #fff;
+            font-size: 2.3rem;
+            margin-bottom: 24px;
+        }
+
+        footer p {
+            color: #A3B2C1; 
+            margin-bottom: 40px;
+        }
+
+        .footer-info {
+            margin-top: 60px;
+            font-size: 0.9rem;
+            color: #A3B2C1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+        }
+
+        .footer-info a {
+            color: #D9A087;
+            text-decoration: underline;
+        }
+
+        /* ================= Botão Flutuante WPP com Pulso ================= */
+        .wpp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+            animation: pulse-wpp 2s infinite;
+        }
+
+        .wpp-float:hover {
+            transform: scale(1.1);
+            background-color: #1EBE56;
+            animation: none;
+        }
+
+        @keyframes pulse-wpp {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* ================= Animações ================= */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================= Responsividade ================= */
+        @media (max-width: 900px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .desktop-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(246, 248, 250, 0.98);
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: clip-path 0.3s ease-in-out;
+            }
+
+            .desktop-menu.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid, .sobre-grid, .etapas-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero {
+                padding-top: 120px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-image {
+                height: 400px;
+                order: 2; 
+            }
+
+            .hero-content {
+                order: 1;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            h2 {
+                font-size: 2rem !important;
+            }
+
+            .wpp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">Giovanna Magalhães</div>
+            
+            <nav class="desktop-menu">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#atendimentos">Atendimentos</a>
+                <a href="#como-funciona">Como Funciona</a>
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#duvidas">Dúvidas</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="btn" style="padding: 10px 20px; font-size: 0.9rem;">Agendar Consulta</a>
+            </div>
+
+            <button class="menu-toggle" aria-label="Abrir Menu"><i class="ph ph-list"></i></button>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="container hero-grid">
+            <div class="hero-content fade-up">
+                <span class="tag">Atendimento 100% Online</span>
+                <h1>Recupere seu bem-estar emocional com um acompanhamento clínico seguro.</h1>
+                <p>Atendimento psicológico online especializado, baseado em evidências, para ajudar você a lidar com os desafios diários com mais leveza, no seu espaço e no seu tempo.</p>
+                <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="btn"><i class="ph ph-whatsapp-logo"></i> Agendar minha consulta</a>
+            </div>
+            
+            <img src="perfil.jpg" alt="Giovanna Magalhães - Psicóloga" class="hero-image fade-up">
+        </div>
+    </section>
+
+    <section class="sobre" id="sobre">
+        <div class="container sobre-grid">
+            <img src="perfil.jpg" alt="Giovanna Magalhães" class="sobre-img fade-up">
+            
+            <div class="sobre-content fade-up">
+                <span class="tag">Quem estará com você</span>
+                <h2>Um espaço seguro e livre de julgamentos</h2>
+                <p>Olá, sou Giovanna Magalhães. Sou psicóloga clínica com atuação embasada na Terapia Cognitivo-Comportamental (TCC) e pós-graduação voltada para a saúde mental. Acredito que a terapia é um ambiente essencial para explorar suas emoções e desenvolver ferramentas práticas para o dia a dia.</p>
+                <p>Minha base de atendimento é em Diadema (SP), mas através da modalidade online levo um cuidado humanizado e técnico para pacientes onde quer que estejam, respeitando sempre sua individualidade e ritmo.</p>
+                <span class="crp">CRP: 06/227876</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="servicos" id="atendimentos">
+        <div class="container">
+            <h2 class="fade-up">O espaço terapêutico é focado<br>nas suas necessidades.</h2>
+            
+            <div class="cards-grid">
+                <div class="card fade-up">
+                    <i class="ph ph-brain"></i>
+                    <h3>Ansiedade e Estresse</h3>
+                    <p>Estratégias para lidar com a sobrecarga mental e os sintomas físicos e emocionais cotidianos.</p>
+                </div>
+                
+                <div class="card fade-up">
+                    <i class="ph ph-plant"></i>
+                    <h3>Autoconhecimento</h3>
+                    <p>Um mergulho profundo em quem você é, seus valores, seus propósitos e potencialidades.</p>
+                </div>
+                
+                <div class="card fade-up">
+                    <i class="ph ph-path"></i>
+                    <h3>Transições de Vida</h3>
+                    <p>Suporte emocional para lidar com mudanças de carreira, términos de relacionamentos ou perdas.</p>
+                </div>
+
+                <div class="card fade-up">
+                    <i class="ph ph-users"></i>
+                    <h3>Relacionamentos</h3>
+                    <p>Compreensão de padrões comportamentais para construir conexões mais saudáveis.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center;" class="fade-up">
+                <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="btn">Conversar no WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="etapas" id="como-funciona">
+        <div class="container">
+            <span class="tag fade-up">Passo a Passo</span>
+            <h2 class="fade-up">Como funciona o atendimento online?</h2>
+            
+            <div class="etapas-grid">
+                <div class="etapa-item fade-up">
+                    <span class="etapa-numero">1</span>
+                    <h3>Contato Inicial</h3>
+                    <p>Você clica no botão e me envia uma mensagem via WhatsApp para tirar dúvidas e verificar os horários.</p>
+                </div>
+                
+                <div class="etapa-item fade-up">
+                    <span class="etapa-numero">2</span>
+                    <h3>Agendamento</h3>
+                    <p>Definimos o dia e horário ideais para a sua rotina e envio as orientações seguras para a sessão.</p>
+                </div>
+                
+                <div class="etapa-item fade-up">
+                    <span class="etapa-numero">3</span>
+                    <h3>Sua Sessão</h3>
+                    <p>No horário marcado, você acessa o link seguro em um ambiente tranquilo para iniciarmos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="diferenciais" id="diferenciais">
+        <div class="container">
+            <span class="tag fade-up">Por que escolher</span>
+            <h2 class="fade-up">Diferenciais do Atendimento</h2>
+            
+            <div class="diferenciais-grid">
+                <div class="diff-item fade-up">
+                    <i class="ph ph-lock-key"></i>
+                    <h3>Sigilo Absoluto</h3>
+                    <p>Plataformas criptografadas e total privacidade garantida em todas as sessões.</p>
+                </div>
+                
+                <div class="diff-item fade-up">
+                    <i class="ph ph-armchair"></i>
+                    <h3>Conforto e Flexibilidade</h3>
+                    <p>Realize sua terapia sem o estresse de trânsito ou deslocamentos físicos.</p>
+                </div>
+                
+                <div class="diff-item fade-up">
+                    <i class="ph ph-hands-clapping"></i>
+                    <h3>Acolhimento Genuíno</h3>
+                    <p>Escuta empática e focada na construção de um vínculo seguro desde o início.</p>
+                </div>
+
+                <div class="diff-item fade-up">
+                    <i class="ph ph-books"></i>
+                    <h3>Base Científica</h3>
+                    <p>Abordagens psicológicas consolidadas e respaldadas por evidências clínicas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="duvidas">
+        <div class="container">
+            <h2 class="fade-up">Perguntas Frequentes</h2>
+            
+            <div class="accordion fade-up">
+                <div class="accordion-item">
+                    <button class="accordion-btn">O atendimento online funciona tão bem quanto o presencial? <i class="ph ph-caret-down"></i></button>
+                    <div class="accordion-content">
+                        <p>Sim. Estudos científicos e a prática clínica comprovam que a eficácia da terapia online é equivalente à presencial. O fator determinante é o vínculo terapêutico estabelecido.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">Qual a duração de cada sessão? <i class="ph ph-caret-down"></i></button>
+                    <div class="accordion-content">
+                        <p>As sessões têm duração média de 50 minutos e ocorrem preferencialmente de forma semanal.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">Como é feito o pagamento? <i class="ph ph-caret-down"></i></button>
+                    <div class="accordion-content">
+                        <p>Os pagamentos são realizados via Pix ou transferência bancária de forma antecipada por sessão ou pacote mensal.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">Atende por plano de saúde? <i class="ph ph-caret-down"></i></button>
+                    <div class="accordion-content">
+                        <p>Os atendimentos são particulares, mas forneço recibo detalhado para solicitação de reembolso junto ao seu convênio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container fade-up">
+            <h2>Sua saúde mental merece ser prioridade.</h2>
+            <p>Se você sente que é o momento de cuidar de si, clique no botão abaixo e vamos conversar.</p>
+            <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="btn"><i class="ph ph-whatsapp-logo"></i> Falar com Giovanna pelo WhatsApp</a>
+            
+            <div class="footer-info">
+                <p>Giovanna Magalhães — Psicóloga Clínica (CRP: 06/227876)</p>
+                <p>Consultório Base: Diadema, SP — Atendimento 100% Online</p>
+                <p>E-mail profissional: contato@giovannamagalhaes.psi.br | <a href="#duvidas">Termos de Privacidade e Sigilo</a></p>
+                <p>© 2026 Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante -->
+    <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="wpp-float" aria-label="Contato via WhatsApp">
+        <i class="ph ph-whatsapp-logo"></i>
+    </a>
+
+    <script>
+        // Menu Mobile Toggle com mudança de ícone
+        const menuToggle = document.querySelector('.menu-toggle');
+        const desktopMenu = document.querySelector('.desktop-menu');
+        const menuIcon = menuToggle.querySelector('i');
+
+        menuToggle.addEventListener('click', () => {
+            desktopMenu.classList.toggle('active');
+            if (desktopMenu.classList.contains('active')) {
+                menuIcon.classList.remove('ph-list');
+                menuIcon.classList.add('ph-x');
+            } else {
+                menuIcon.classList.remove('ph-x');
+                menuIcon.classList.add('ph-list');
+            }
+        });
+
+        // Fechar menu mobile ao clicar em um link
+        document.querySelectorAll('.desktop-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                desktopMenu.classList.remove('active');
+                menuIcon.classList.remove('ph-x');
+                menuIcon.classList.add('ph-list');
+            });
+        });
+
+        // Lógica do Accordion (FAQ)
+        const accBtns = document.querySelectorAll('.accordion-btn');
+        
+        accBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    document.querySelectorAll('.accordion-content').forEach(item => item.style.maxHeight = null);
+                    document.querySelectorAll('.accordion-btn i').forEach(i => i.style.transform = 'rotate(0deg)');
+                    
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.style.transform = 'rotate(180deg)';
+                }
+                
+                icon.style.transition = 'transform 0.3s ease';
+            });
+        });
+
+        // Animação de Fade Up ao rolar a página
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Smooth Scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
