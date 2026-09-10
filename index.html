@@ -7,17 +7,16 @@
     <meta name="description" content="Recupere seu bem-estar emocional com um acompanhamento clínico seguro, no seu tempo e no seu espaço. Atendimento psicológico online em Diadema - SP.">
 
     <!-- Open Graph (preview ao compartilhar o link, ex: WhatsApp) -->
-    <!-- IMPORTANTE: após publicar o site, trocar og:url e og:image por URLs absolutas (https://seudominio.com/...) -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:title" content="Giovanna Magalhães | Psicóloga Clínica Online">
     <meta property="og:description" content="Recupere seu bem-estar emocional com um acompanhamento clínico seguro, no seu tempo e no seu espaço. Atendimento psicológico online em Diadema - SP.">
     <meta property="og:image" content="perfil.jpg">
 
-    <!-- Favicon (SVG inline com a inicial "G", sem depender de arquivo externo) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23789BBD'/%3E%3Ctext x='32' y='42' font-family='Open Sans, sans-serif' font-size='32' font-weight='700' fill='%23F6F8FA' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
     
-    <!-- Google Fonts: Open Sans para Títulos, Inter para Textos -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -58,7 +57,9 @@
             font-family: var(--font-body);
             background-color: var(--bg-color);
             color: var(--text-dark);
-            line-height: 1.6;
+            /* Melhoria no espaçamento: line-height maior e letter-spacing suave */
+            line-height: 1.75; 
+            letter-spacing: 0.3px;
             overflow-x: hidden;
         }
 
@@ -66,13 +67,15 @@
             font-family: var(--font-title);
             font-weight: 600;
             color: var(--text-dark);
-            line-height: 1.2;
-            letter-spacing: -0.5px;
+            /* Melhoria: Ajuste da altura da linha para títulos não ficarem esmagados */
+            line-height: 1.3;
+            letter-spacing: -0.02em;
         }
 
         p {
             color: var(--text-light);
-            margin-bottom: 1rem;
+            /* Melhoria: Mais espaço entre parágrafos para leitura mais fluida */
+            margin-bottom: 1.5rem; 
         }
 
         a {
@@ -95,21 +98,22 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            background-color: #25D366; /* Verde oficial do WhatsApp */
+            background-color: #25D366; 
             color: #fff;
-            padding: 16px 32px;
+            padding: 18px 36px; /* Melhoria: Botão levemente mais espaçoso e clicável */
             border-radius: var(--radius);
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.05rem;
             transition: var(--transition);
             border: none;
             cursor: pointer;
             text-align: center;
             font-family: var(--font-body);
+            letter-spacing: 0.5px;
         }
 
         .btn:hover {
-            background-color: #1EBE56; /* Verde ligeiramente mais escuro para o clique */
+            background-color: #1EBE56; 
             transform: translateY(-2px);
         }
 
@@ -142,7 +146,7 @@
 
         .desktop-menu {
             display: flex;
-            gap: 24px;
+            gap: 30px; /* Melhoria: Maior espaçamento entre os links do menu */
             align-items: center;
         }
 
@@ -185,21 +189,23 @@
             display: inline-block;
             font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             color: var(--primary);
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 20px; /* Melhoria no espaço da tag */
         }
 
         .hero h1 {
-            font-size: 3.1rem;
-            margin-bottom: 24px;
+            font-size: 3.2rem;
+            margin-bottom: 28px; /* Melhoria: Mais respiro abaixo do título principal */
         }
 
         .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 40px;
+            font-size: 1.15rem; /* Melhoria: Texto de apoio um pouco maior para leitura confortável */
+            margin-bottom: 45px;
             max-width: 90%;
+            color: var(--text-dark); /* Deixado ligeiramente mais escuro para destaque */
+            opacity: 0.85;
         }
 
         .hero-image {
@@ -233,35 +239,35 @@
         }
 
         .sobre h2 {
-            font-size: 2.3rem;
-            margin-bottom: 20px;
+            font-size: 2.4rem;
+            margin-bottom: 28px;
         }
 
         .crp {
             font-size: 0.95rem;
             color: var(--accent);
             font-weight: 600;
-            margin-top: 20px;
+            margin-top: 24px;
             display: block;
         }
 
         /* ================= Serviços Section ================= */
         .servicos h2 {
             text-align: center;
-            font-size: 2.3rem;
-            margin-bottom: 60px;
+            font-size: 2.4rem;
+            margin-bottom: 70px; /* Maior espaçamento antes dos cards */
         }
 
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 30px;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
 
         .card {
             background: #fff;
-            padding: 40px 30px;
+            padding: 45px 35px; /* Melhoria: Cartões mais amplos com mais padding interno */
             border-radius: var(--radius);
             box-shadow: 0 10px 30px rgba(35, 49, 66, 0.05);
             transition: var(--transition);
@@ -272,14 +278,18 @@
         }
 
         .card i {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: var(--accent);
-            margin-bottom: 20px;
+            margin-bottom: 24px; /* Respiro entre ícone e título */
         }
 
         .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
+            font-size: 1.35rem;
+            margin-bottom: 16px;
+        }
+
+        .card p {
+            margin-bottom: 0; /* Remove margem do último parágrafo do card */
         }
 
         /* ================= Etapas (Como Funciona) ================= */
@@ -289,8 +299,8 @@
         }
 
         .etapas h2 {
-            font-size: 2.3rem;
-            margin-bottom: 60px;
+            font-size: 2.4rem;
+            margin-bottom: 70px;
         }
 
         .etapas-grid {
@@ -304,20 +314,28 @@
             position: relative;
             padding-left: 60px;
             background: #fff;
-            padding: 40px 30px 40px 60px;
+            padding: 45px 35px 45px 70px; /* Mais área de respiro interna */
             border-radius: var(--radius);
             box-shadow: 0 10px 30px rgba(35, 49, 66, 0.03);
         }
 
         .etapa-numero {
             position: absolute;
-            left: 20px;
-            top: 25px;
+            left: 24px;
+            top: 30px;
             font-family: var(--font-title);
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--primary);
-            opacity: 0.3;
+            opacity: 0.2;
             font-weight: 700;
+        }
+
+        .etapa-item h3 {
+            margin-bottom: 12px;
+        }
+        
+        .etapa-item p {
+            margin-bottom: 0;
         }
 
         /* ================= Diferenciais ================= */
@@ -326,7 +344,7 @@
         }
 
         .diferenciais h2 {
-            font-size: 2.3rem;
+            font-size: 2.4rem;
             margin-bottom: 60px;
         }
 
@@ -342,7 +360,7 @@
             display: flex;
             align-items: flex-start;
             gap: 24px;
-            padding: 28px 4px;
+            padding: 32px 10px; /* Melhoria: maior espaçamento entre as linhas */
             border-bottom: 1px solid rgba(35, 49, 66, 0.1);
         }
 
@@ -351,15 +369,15 @@
         }
 
         .diff-item i {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--primary);
             flex-shrink: 0;
-            margin-top: 4px;
+            margin-top: 2px;
         }
 
         .diff-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 6px;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
         }
 
         .diff-item p {
@@ -373,7 +391,7 @@
 
         .faq h2 {
             text-align: center;
-            font-size: 2.3rem;
+            font-size: 2.4rem;
             margin-bottom: 60px;
         }
 
@@ -385,7 +403,7 @@
         .accordion-item {
             border-bottom: 1px solid rgba(35, 49, 66, 0.1);
             background: #fff;
-            margin-bottom: 12px;
+            margin-bottom: 16px; /* Mais espaço entre as sanfonas */
             border-radius: var(--radius);
             padding: 0 24px;
             box-shadow: 0 4px 15px rgba(35, 49, 66, 0.02);
@@ -396,8 +414,8 @@
             text-align: left;
             background: none;
             border: none;
-            padding: 20px 0;
-            font-size: 1.05rem;
+            padding: 24px 0; /* Maior área clicável e espaçamento */
+            font-size: 1.1rem;
             font-weight: 600;
             font-family: var(--font-body);
             color: var(--text-dark);
@@ -405,6 +423,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            line-height: 1.5;
         }
 
         .accordion-content {
@@ -414,7 +433,8 @@
         }
 
         .accordion-content p {
-            padding-bottom: 20px;
+            padding-bottom: 24px;
+            margin-bottom: 0;
         }
 
         /* ================= Footer ================= */
@@ -422,33 +442,39 @@
             background-color: var(--text-dark);
             color: #fff;
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px; /* Mais espaçamento no rodapé */
         }
 
         footer h2 {
             color: #fff;
-            font-size: 2.3rem;
-            margin-bottom: 24px;
+            font-size: 2.4rem;
+            margin-bottom: 28px;
         }
 
         footer p {
             color: #A3B2C1; 
-            margin-bottom: 40px;
+            margin-bottom: 45px;
+            font-size: 1.1rem;
         }
 
         .footer-info {
-            margin-top: 60px;
-            font-size: 0.9rem;
+            margin-top: 70px;
+            font-size: 0.95rem;
             color: #A3B2C1;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
+            padding-top: 40px;
+        }
+
+        .footer-info p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
         }
 
         .footer-info a {
-            color: #D9A087;
+            color: var(--accent);
             text-decoration: underline;
         }
 
@@ -496,7 +522,7 @@
             transform: translateY(0);
         }
 
-        /* ================= Acessibilidade: Movimento Reduzido ================= */
+        /* ================= Acessibilidade ================= */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -542,7 +568,7 @@
         @media (max-width: 768px) {
             .hero-grid, .sobre-grid, .etapas-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 50px;
             }
 
             .hero {
@@ -551,7 +577,12 @@
             }
 
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .hero-image {
@@ -564,7 +595,7 @@
             }
 
             section {
-                padding: 60px 20px;
+                padding: 70px 20px; /* Melhoria de espaçamento no mobile */
             }
 
             .sobre h2,
@@ -573,7 +604,7 @@
             .diferenciais h2,
             .faq h2,
             footer h2 {
-                font-size: 2rem;
+                font-size: 2.1rem;
             }
 
             .wpp-float {
@@ -602,7 +633,7 @@
             </nav>
 
             <div class="header-actions">
-                <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="btn whatsapp-cta" style="padding: 10px 20px; font-size: 0.9rem;">Agendar minha consulta</a>
+                <a href="https://wa.me/5511916123261?text=Olá%20Giovanna,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20online." target="_blank" class="btn whatsapp-cta" style="padding: 12px 24px; font-size: 0.95rem;">Agendar minha consulta</a>
             </div>
 
             <button class="menu-toggle" aria-label="Abrir Menu"><i class="ph ph-list"></i></button>
@@ -693,7 +724,7 @@
                 <div class="etapa-item fade-up">
                     <span class="etapa-numero">3</span>
                     <h3>Sua Sessão</h3>
-                    <p>No horário marcado, você acessa o link seguro do <!-- TODO: confirmar plataforma real usada (Google Meet, Zoom, etc.) -->[PLATAFORMA DE VIDEOCHAMADA] em um ambiente tranquilo para iniciarmos.</p>
+                    <p>No horário marcado, você acessa o link seguro do Google Meet ou Teams em um ambiente tranquilo para iniciarmos.</p>
                 </div>
             </div>
         </div>
@@ -797,8 +828,6 @@
     </a>
 
     <script>
-        // ===== Fonte única do número/mensagem de WhatsApp =====
-        // Para trocar o número ou a mensagem padrão, edite só aqui.
         const WHATSAPP_NUMBER = '5511916123261';
         const WHATSAPP_MESSAGE = 'Olá Giovanna, gostaria de saber mais sobre o atendimento online.';
         const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
@@ -807,7 +836,6 @@
             link.href = WHATSAPP_URL;
         });
 
-        // Menu Mobile Toggle com mudança de ícone
         const menuToggle = document.querySelector('.menu-toggle');
         const desktopMenu = document.querySelector('.desktop-menu');
         const menuIcon = menuToggle.querySelector('i');
@@ -823,7 +851,6 @@
             }
         });
 
-        // Fechar menu mobile ao clicar em um link
         document.querySelectorAll('.desktop-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 desktopMenu.classList.remove('active');
@@ -832,7 +859,6 @@
             });
         });
 
-        // Lógica do Accordion (FAQ)
         const accBtns = document.querySelectorAll('.accordion-btn');
         
         accBtns.forEach(btn => {
@@ -859,7 +885,6 @@
             });
         });
 
-        // Animação de Fade Up ao rolar a página
         const observerOptions = {
             threshold: 0.1,
             rootMargin: "0px 0px -50px 0px"
@@ -878,7 +903,6 @@
             observer.observe(element);
         });
 
-        // Smooth Scroll para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
