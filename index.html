@@ -14,7 +14,7 @@
     <meta property="og:image" content="perfil.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23789BBD'/%3E%3Ctext x='32' y='42' font-family='Open Sans, sans-serif' font-size='32' font-weight='700' fill='%23F6F8FA' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%235C7A92'/%3E%3Ctext x='32' y='42' font-family='Open Sans, sans-serif' font-size='32' font-weight='700' fill='%23F4F7F9' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,15 +25,26 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>
-        /* ================= Variaveis de Design ================= */
+        /* ================= Variaveis de Design (NOVA PALETA ANTIFADIGA) ================= */
         :root {
-            --primary: #789BBD; 
-            --primary-dark: #587996; 
-            --bg-color: #F6F8FA; 
-            --bg-alt: #EBF0F5; 
-            --text-dark: #233142; 
-            --text-light: #5B6D7D; 
-            --accent: #D9A087; 
+            /* Azul ardósia (mais sóbrio, opaco e acolhedor) */
+            --primary: #5C7A92; 
+            /* Azul mais fechado para botões ou contrastes */
+            --primary-dark: #3E576B; 
+            
+            /* Fundo principal: um cinza-azulado muito claro (tira o ofuscamento do branco) */
+            --bg-color: #EBEFF2; 
+            /* Fundo secundário para as seções alternadas (levemente mais escuro) */
+            --bg-alt: #DCE3E9; 
+            /* Substitui o branco puro (#fff) dos cartões por um tom "gelo" muito suave */
+            --surface-color: #F4F7F9; 
+            
+            /* Azul marinho quase cinza para textos (suaviza o contraste com o fundo) */
+            --text-dark: #2B3A4A; 
+            /* Cinza azulado para parágrafos */
+            --text-light: #516578; 
+            /* Terracota suave, mantendo o tom acolhedor sem ser vibrante demais */
+            --accent: #C28E77; 
             
             --font-title: 'Open Sans', sans-serif;
             --font-body: 'Inter', sans-serif;
@@ -57,7 +68,6 @@
             font-family: var(--font-body);
             background-color: var(--bg-color);
             color: var(--text-dark);
-            /* Melhoria no espaçamento: line-height maior e letter-spacing suave */
             line-height: 1.75; 
             letter-spacing: 0.3px;
             overflow-x: hidden;
@@ -67,14 +77,12 @@
             font-family: var(--font-title);
             font-weight: 600;
             color: var(--text-dark);
-            /* Melhoria: Ajuste da altura da linha para títulos não ficarem esmagados */
             line-height: 1.3;
             letter-spacing: -0.02em;
         }
 
         p {
             color: var(--text-light);
-            /* Melhoria: Mais espaço entre parágrafos para leitura mais fluida */
             margin-bottom: 1.5rem; 
         }
 
@@ -98,9 +106,9 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            background-color: #25D366; 
+            background-color: #20C259; /* Verde WhatsApp levemente ajustado para combinar com tons pastel */
             color: #fff;
-            padding: 18px 36px; /* Melhoria: Botão levemente mais espaçoso e clicável */
+            padding: 18px 36px;
             border-radius: var(--radius);
             font-weight: 600;
             font-size: 1.05rem;
@@ -113,20 +121,21 @@
         }
 
         .btn:hover {
-            background-color: #1EBE56; 
+            background-color: #1CAE50; 
             transform: translateY(-2px);
         }
 
         /* ================= Header e Navegação ================= */
         header {
             padding: 15px 20px;
-            background-color: rgba(246, 248, 250, 0.95);
+            /* Fundo do header acompanhando a nova cor de superfície (com transparência) */
+            background-color: rgba(244, 247, 249, 0.95);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
 
         .header-content {
@@ -146,7 +155,7 @@
 
         .desktop-menu {
             display: flex;
-            gap: 30px; /* Melhoria: Maior espaçamento entre os links do menu */
+            gap: 30px;
             align-items: center;
         }
 
@@ -192,29 +201,29 @@
             letter-spacing: 1.5px;
             color: var(--primary);
             font-weight: 700;
-            margin-bottom: 20px; /* Melhoria no espaço da tag */
+            margin-bottom: 20px;
         }
 
         .hero h1 {
             font-size: 3.2rem;
-            margin-bottom: 28px; /* Melhoria: Mais respiro abaixo do título principal */
+            margin-bottom: 28px;
         }
 
         .hero p {
-            font-size: 1.15rem; /* Melhoria: Texto de apoio um pouco maior para leitura confortável */
+            font-size: 1.15rem;
             margin-bottom: 45px;
             max-width: 90%;
-            color: var(--text-dark); /* Deixado ligeiramente mais escuro para destaque */
+            color: var(--text-dark);
             opacity: 0.85;
         }
 
         .hero-image {
             width: 100%;
             height: 550px;
-            background-color: #DFE5EC; 
+            background-color: var(--bg-alt); 
             border-radius: var(--radius);
             object-fit: cover;
-            box-shadow: 0 15px 35px rgba(35, 49, 66, 0.08);
+            box-shadow: 0 15px 35px rgba(43, 58, 74, 0.08);
         }
 
         /* ================= Sobre Section ================= */
@@ -232,10 +241,10 @@
         .sobre-img {
             width: 100%;
             aspect-ratio: 4/5;
-            background-color: #DFE5EC;
+            background-color: var(--bg-color);
             border-radius: var(--radius);
             object-fit: cover;
-            box-shadow: 0 15px 35px rgba(35, 49, 66, 0.08);
+            box-shadow: 0 15px 35px rgba(43, 58, 74, 0.08);
         }
 
         .sobre h2 {
@@ -255,7 +264,7 @@
         .servicos h2 {
             text-align: center;
             font-size: 2.4rem;
-            margin-bottom: 70px; /* Maior espaçamento antes dos cards */
+            margin-bottom: 70px;
         }
 
         .cards-grid {
@@ -266,10 +275,10 @@
         }
 
         .card {
-            background: #fff;
-            padding: 45px 35px; /* Melhoria: Cartões mais amplos com mais padding interno */
+            background: var(--surface-color); /* Novo fundo dos cards (suavizado) */
+            padding: 45px 35px;
             border-radius: var(--radius);
-            box-shadow: 0 10px 30px rgba(35, 49, 66, 0.05);
+            box-shadow: 0 10px 30px rgba(43, 58, 74, 0.05);
             transition: var(--transition);
         }
 
@@ -280,7 +289,7 @@
         .card i {
             font-size: 2.5rem;
             color: var(--accent);
-            margin-bottom: 24px; /* Respiro entre ícone e título */
+            margin-bottom: 24px;
         }
 
         .card h3 {
@@ -289,7 +298,7 @@
         }
 
         .card p {
-            margin-bottom: 0; /* Remove margem do último parágrafo do card */
+            margin-bottom: 0;
         }
 
         /* ================= Etapas (Como Funciona) ================= */
@@ -313,10 +322,10 @@
         .etapa-item {
             position: relative;
             padding-left: 60px;
-            background: #fff;
-            padding: 45px 35px 45px 70px; /* Mais área de respiro interna */
+            background: var(--surface-color);
+            padding: 45px 35px 45px 70px;
             border-radius: var(--radius);
-            box-shadow: 0 10px 30px rgba(35, 49, 66, 0.03);
+            box-shadow: 0 10px 30px rgba(43, 58, 74, 0.03);
         }
 
         .etapa-numero {
@@ -360,8 +369,8 @@
             display: flex;
             align-items: flex-start;
             gap: 24px;
-            padding: 32px 10px; /* Melhoria: maior espaçamento entre as linhas */
-            border-bottom: 1px solid rgba(35, 49, 66, 0.1);
+            padding: 32px 10px;
+            border-bottom: 1px solid rgba(43, 58, 74, 0.1);
         }
 
         .diff-item:last-child {
@@ -401,12 +410,12 @@
         }
 
         .accordion-item {
-            border-bottom: 1px solid rgba(35, 49, 66, 0.1);
-            background: #fff;
-            margin-bottom: 16px; /* Mais espaço entre as sanfonas */
+            border-bottom: 1px solid rgba(43, 58, 74, 0.1);
+            background: var(--surface-color);
+            margin-bottom: 16px;
             border-radius: var(--radius);
             padding: 0 24px;
-            box-shadow: 0 4px 15px rgba(35, 49, 66, 0.02);
+            box-shadow: 0 4px 15px rgba(43, 58, 74, 0.02);
         }
 
         .accordion-btn {
@@ -414,7 +423,7 @@
             text-align: left;
             background: none;
             border: none;
-            padding: 24px 0; /* Maior área clicável e espaçamento */
+            padding: 24px 0;
             font-size: 1.1rem;
             font-weight: 600;
             font-family: var(--font-body);
@@ -440,19 +449,19 @@
         /* ================= Footer ================= */
         footer {
             background-color: var(--text-dark);
-            color: #fff;
+            color: var(--surface-color);
             text-align: center;
-            padding: 100px 20px; /* Mais espaçamento no rodapé */
+            padding: 100px 20px;
         }
 
         footer h2 {
-            color: #fff;
+            color: var(--surface-color);
             font-size: 2.4rem;
             margin-bottom: 28px;
         }
 
         footer p {
-            color: #A3B2C1; 
+            color: #93A6B8; /* Mais apagado para o texto secundário do footer */
             margin-bottom: 45px;
             font-size: 1.1rem;
         }
@@ -460,11 +469,11 @@
         .footer-info {
             margin-top: 70px;
             font-size: 0.95rem;
-            color: #A3B2C1;
+            color: #93A6B8;
             display: flex;
             flex-direction: column;
             gap: 12px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(244, 247, 249, 0.1);
             padding-top: 40px;
         }
 
@@ -483,7 +492,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: #25D366;
+            background-color: #20C259;
             color: #fff;
             width: 60px;
             height: 60px;
@@ -492,7 +501,7 @@
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 4px 15px rgba(32, 194, 89, 0.4);
             z-index: 1000;
             transition: var(--transition);
             animation: pulse-wpp 2s infinite;
@@ -500,14 +509,14 @@
 
         .wpp-float:hover {
             transform: scale(1.1);
-            background-color: #1EBE56;
+            background-color: #1CAE50;
             animation: none;
         }
 
         @keyframes pulse-wpp {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(32, 194, 89, 0.6); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(32, 194, 89, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(32, 194, 89, 0); }
         }
 
         /* ================= Animações ================= */
@@ -552,7 +561,7 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: rgba(246, 248, 250, 0.98);
+                background-color: rgba(244, 247, 249, 0.98);
                 flex-direction: column;
                 padding: 20px 0;
                 box-shadow: 0 10px 15px rgba(0,0,0,0.05);
@@ -595,7 +604,7 @@
             }
 
             section {
-                padding: 70px 20px; /* Melhoria de espaçamento no mobile */
+                padding: 70px 20px;
             }
 
             .sobre h2,
